@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+    href="/theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ronaldo Tomazeli Duarte Atom">
+
+
+
+
+
+<meta name="author" content="Ronaldo Tomazeli Duarte" />
+<meta name="description" content="Um do fatores que sempre levamos em consideração ao comprar um laptop é o tempo de vida da bateria. Infelizmente, com o passar do tempo, a capacidade de fornecer energia da bateria diminui, e acabamos nos vendo com o laptop preso a uma tomada. Existem algumas condições que agravam a …" />
+<meta name="keywords" content="dell, bios, bateria">
+
+
+<meta property="og:site_name" content="Ronaldo Tomazeli Duarte"/>
+<meta property="og:title" content="Gerenciando configurações de BIOS em laptops Dell"/>
+<meta property="og:description" content="Um do fatores que sempre levamos em consideração ao comprar um laptop é o tempo de vida da bateria. Infelizmente, com o passar do tempo, a capacidade de fornecer energia da bateria diminui, e acabamos nos vendo com o laptop preso a uma tomada. Existem algumas condições que agravam a …"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:url" content="/gerenciando-bios-dell.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-07-10 00:00:00-03:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/ronaldo-tomazeli-duarte.html">
+<meta property="article:section" content="hardware"/>
+<meta property="article:tag" content="dell"/>
+<meta property="article:tag" content="bios"/>
+<meta property="article:tag" content="bateria"/>
+<meta property="og:image" content="//gravatar.com/avatar/241731fc10aa5402f164d1f80d9743db?s=120">
+
+  <title>Ronaldo Tomazeli Duarte &ndash; Gerenciando configurações de BIOS em laptops Dell</title>
+
+</head>
+<body class="dark-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="//gravatar.com/avatar/241731fc10aa5402f164d1f80d9743db?s=120" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/ronaldotd" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/ronaldotduarte" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="gerenciando-bios-dell">Gerenciando configurações de BIOS em laptops Dell</h1>
+    <p>
+      Publicado em 10 de julho de 2020 na categoria <a href="/category/hardware.html">hardware</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Um do fatores que sempre levamos em consideração ao comprar um laptop é o tempo de vida da bateria. Infelizmente, com o passar do tempo, a capacidade de fornecer energia da bateria diminui, e acabamos nos vendo com o laptop preso a uma tomada.
+Existem algumas condições que agravam a perda de capacidade da bateria. O site Battery University publicou um <a href="https://batteryuniversity.com/learn/article/how_to_prolong_lithium_based_batteries">artigo</a> bem interessante sobre o comportamento de baterias de ion-lítio. Segundo o artigo, a pior condição para uma bateria é carga total em temperaturas elevadas, que ocorre justamente quando usamos o laptop com a fonte de alimentação por um longo período de tempo. Ainda segundo o artigo, as baterias deveriam ser mantidas em aproximadamente 80% do nível máximo de carga.</p>
+<p>Para contornar o problema, os fabricantes de laptops oferecem soluções com variados níveis de complexidade:</p>
+<ul>
+<li>
+<p>"travar" a bateria em determinado nível de carga através de uma combinação de teclas: nesta solução, carregaríamos a bateria até 80%, por exemplo, e ativaríamos a trava com a combinação de teclas.</p>
+</li>
+<li>
+<p>permitir a configuração de uma faixa de operação para a bateria, com níveis mínimos e máximos: neste caso, seria configurada uma faixa, por exemplo, com mínimo de 60% e máximo de 80%, a bateria seria carregada somente o nível de carga for inferior a 60%, e o carregamento seria interrompido quando atingisse 80%.</p>
+</li>
+</ul>
+<p>O ponto negativo das duas abordagens acima é não poder contar com a carga máxima da bateria em uma situação em que o laptop precise ser usado sem alimentação externa. Recentemente surgiram novos mecanismos que "aprendem" o padrão de uso do laptop. Por exemplo, se a pessoa usa o laptop durante o dia todo conectado à fonte, mas à noite usa somente com bateria, com o aprendizado a bateria seria mantida em um nível próximo de 80% durante o dia, e no final da tarde a bateria seria totalmente carrega para o uso noturno.</p>
+<p>Alguns laptops da Dell, como o Inspiron 14, permitem configurar os níveis mínimo e máximo da bateria através da BIOS, através da interface disponível no boot do laptop. O principal problema é ter que reiniciar o laptop para desligar o mecanismo e optar por carga máxima, por exemplo, caso eu deseje usar o laptop longe da alimentação.</p>
+<p>Depois de procurar um pouco, encontrei um aplicativo que permite efetuar essas configurações via terminal, o Dell Command | Configure. <a href="https://www.dell.com/support/article/pt-br/sln311302/dell-command-configure?lang=pt">Aqui</a> encontram-se as instruções de instalação para Windows e Linux, além da documentação.</p>
+<p>Existem inúmeras configurações da BIOS que podem ser gerenciadas pelo aplicativo, inclusive os mecanismos de carga da bateria. Para o gerenciamento de carga da bateria, o aplicativo disponibiliza a opção <em>PrimaryBattChargeCfg</em>. O comando abaixo lista as opções disponíveis:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> cctk -H --PrimaryBattChargeCfg
+
+<span class="go">PrimaryBattChargeCfg:  Configures the primary battery charging.</span>
+
+<span class="go">Standard - Charges the battery over a longer period of time.</span>
+<span class="go">Express - Charges the battery using the express charging algorithm, Dell&#39;s fast charging technology.</span>
+<span class="go">PrimAcUse - Charges battery while plugged-in.</span>
+<span class="go">Adaptive - Charges the battery based on a periodic evaluation of battery usage to deliver the best balance capacity.</span>
+<span class="go">Custom - The battery charging starts and stops based on user input. The start value range should be 50-95 percentage, the stop value range should be 55-100 percentage, and the difference between the start and stop values should be greater than or equal to 5.</span>
+
+<span class="go">Arguments: Standard+ | PrimAcUse+ | Custom+ | Express | Adaptive</span>
+
+<span class="go">Note : + Indicates the arguments supported in the current machine.</span>
+</pre></div>
+
+
+<p>A saída explica cada mecanismo, e aponta quais são os disponíveis no meu laptop (<em>Standard</em>, <em>PrimAcUse</em> e <em>Custom</em>). Vamos explorar com mais detalhes o <em>Custom</em>, que permite criar a faixa de operação da bateria.</p>
+<p>Para criar uma faixa de operação com mínimo de 60% e máximo de 80% basta executar o aplicativo com as opções abaixo:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> cctk --PrimaryBattChargeCfg<span class="o">=</span>Custom:60-80
+<span class="go">PrimaryBattChargeCfg=Custom:60-80</span>
+</pre></div>
+
+
+<p>Segundo a documentação, o nível mínimo deve estar entre 50 e 95, o máximo entre 55 e 100 e a diferença entre eles deve ser pelo menos 5.</p>
+<p>Com os parâmetros utilizados neste exemplo, caso a bateria esteja com carga de 40% no momento que a configuração foi aplicado, a bateria será carregada até 80%. Mesmo que ela descarregue, ela só voltará a ser carrega caso a carga fique menor que 60%. Caso surja a necessidade de carregar a bateria totalmente, basta trocar o mecanismo de carregamento:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> cctk --PrimaryBattChargeCfg<span class="o">=</span>PrimAcUse
+<span class="go">PrimaryBattChargeCfg=PrimAcUse</span>
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/dell.html">dell</a>
+      <a href="/tag/bios.html">bios</a>
+      <a href="/tag/bateria.html">bateria</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2020</p>
+<p>
+Criado com o <a href="http://getpelican.com" target="_blank">Pelican</a> usando o tema <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ronaldo Tomazeli Duarte ",
+  "url" : "",
+  "image": "//gravatar.com/avatar/241731fc10aa5402f164d1f80d9743db?s=120",
+  "description": ""
+}
+</script>
+
+
+</body>
+</html>
